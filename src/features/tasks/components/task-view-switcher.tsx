@@ -7,7 +7,7 @@ import { useQueryState } from "nuqs";
 import { Loader, PlusIcon } from "lucide-react";
 import React from "react";
 import { useCreateTaskModal } from "../hooks/use-create-task-modal";
-import { useGetTasks } from "../api/use-get-task";
+import { useGetTasks } from "../api/use-get-tasks";
 import { useWorkspaceId } from "@/features/workspaces/hooks/use-workspace-id";
 import { useQuery } from "@tanstack/react-query";
 import { DataFilters } from "./data-filters";
