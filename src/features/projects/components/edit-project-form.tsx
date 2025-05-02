@@ -21,11 +21,10 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { ArrowLeftIcon, CopyIcon, ImageIcon } from "lucide-react";
+import { ArrowLeftIcon, ImageIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useConfirm } from "@/hooks/use-confirm";
-import { toast } from "sonner";
 import { Project } from "../types";
 import { useUpdateProject } from "../api/use-update-project";
 
@@ -67,16 +66,9 @@ export const EditProjectForm = ({
 
     if (!ok) return;
 
-    deleteProject(
-      {
-        param: { projectId: initialValues.$id },
-      },
-      {
-        onSuccess: () => {
-          window.location.href = `/workspaces/${initialValues.workspaceId}`;
-        },
-      }
-    );
+    deleteProject({
+      param: { projectId: initialValues.$id },
+    });
   };
 
   const onSubmit = (values: z.infer<typeof updateProjectSchema>) => {
